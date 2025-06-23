@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Image from "next/image";
 
 export default function HtmlSection() {
   return (
@@ -30,13 +31,14 @@ export default function HtmlSection() {
         <ul className="list-disc pl-6 mb-4 text-[#444]">
           <li><span className="font-mono">&lt;h1&gt;...&lt;/h1&gt;</span> - Headings</li>
           <li><span className="font-mono">&lt;p&gt;...&lt;/p&gt;</span> - Paragraphs</li>
-          <li><span className="font-mono">&lt;a href=""&gt;...&lt;/a&gt;</span> - Links</li>
-          <li><span className="font-mono">&lt;img src="" alt="" /&gt;</span> - Images</li>
+          <li><span className="font-mono">&lt;a href=&quot;&quot;&gt;...&lt;/a&gt;</span> - Links</li>
+          <li><span className="font-mono">&lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;</span> - Images</li>
           <li><span className="font-mono">&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</span> - Lists</li>
         </ul>
         <p className="text-lg text-[#444]">
           Start experimenting with HTML by editing and viewing your own files in the browser!
         </p>
+        <Image src="..." alt="..." width={300} height={150} />
       </main>
     </div>
   );
