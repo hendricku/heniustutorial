@@ -1,103 +1,184 @@
-import Image from "next/image";
+import Navbar from "./Navbar";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-white min-h-screen font-sans">
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main>
+        {/* THE BLOG Heading */}
+        <div className="max-w-7xl mx-auto px-8">
+          <hr className="border-gray-200 mb-10" />
+          <h1
+            className="font-extrabold text-[clamp(4rem,12vw,10rem)] leading-[1.05] text-[#222] text-center pb-10"
+            style={{ letterSpacing: "-0.04em" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            THE BLOG
+          </h1>
+          <hr className="border-gray-200 mb-12" />
         </div>
+
+        {/* Recent blog posts */}
+        <section className="max-w-7xl mx-auto px-8">
+          <h2 className="font-semibold text-[20px] mb-6 text-[#222]">Recent blog posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+            {/* Featured Post */}
+            <div className="md:col-span-2 flex flex-col bg-white rounded-lg">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
+                  alt="HTML Basics"
+                  className="rounded-lg w-full h-[240px] object-cover"
+                />
+                <a
+                  href="/htmlsection"
+                  className="absolute top-4 right-4 bg-white rounded-full p-2 shadow hover:bg-gray-100 transition"
+                  aria-label="External link"
+                >
+                  <svg width="20" height="20" fill="none" stroke="#222" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              </div>
+              <div className="mt-5">
+                <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
+                  Alex Dev <span className="text-[#6b6b6b] font-normal">• 23 Jun 2025</span>
+                </div>
+                <div className="font-bold text-[23px] mb-1 text-[#222] flex items-center">
+                  <a href="/htmlsection" className="hover:underline focus:underline">
+                    Getting Started with HTML
+                  </a>
+                </div>
+                <div className="text-[16px] text-[#555] mb-3">
+                  Learn the building blocks of the web! This post covers HTML essentials for beginners, including tags, structure, and best practices.
+                </div>
+                <div className="flex gap-2">
+                  <span className="bg-[#e9d8fd] text-[#6f42c1] rounded px-3 py-1 text-[13px]">HTML</span>
+                  <span className="bg-[#bee3f8] text-[#3182ce] rounded px-3 py-1 text-[13px]">Beginner</span>
+                  <span className="bg-[#fed7e2] text-[#d53f8c] rounded px-3 py-1 text-[13px]">Web</span>
+                </div>
+              </div>
+            </div>
+            {/* Right Column: 2 stacked posts */}
+            <div className="flex flex-col gap-8">
+              {/* Post 1 */}
+              <div className="flex flex-col">
+                <img
+                  src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
+                  alt="CSS Fundamentals"
+                  className="rounded-lg w-full h-[110px] object-cover mb-3"
+                />
+                <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
+                  Jamie Styles <span className="text-[#6b6b6b] font-normal">• 22 Jun 2025</span>
+                </div>
+                <div className="font-bold text-[17px] mb-1 text-[#222]">CSS Fundamentals</div>
+                <div className="text-[14px] text-[#555] mb-3 line-clamp-2">
+                  Discover how to style your web pages with CSS. Learn about selectors, colors, layouts, and responsive design.
+                </div>
+                <div className="flex gap-2">
+                  <span className="bg-[#e9d8fd] text-[#6f42c1] rounded px-3 py-1 text-[13px]">CSS</span>
+                  <span className="bg-[#fed7e2] text-[#d53f8c] rounded px-3 py-1 text-[13px]">Styling</span>
+                </div>
+              </div>
+              {/* Post 2 */}
+              <div className="flex flex-col">
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                  alt="JavaScript Essentials"
+                  className="rounded-lg w-full h-[110px] object-cover mb-3"
+                />
+                <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
+                  Morgan Script <span className="text-[#6b6b6b] font-normal">• 21 Jun 2025</span>
+                </div>
+                <div className="font-bold text-[17px] mb-1 text-[#222]">JavaScript Essentials</div>
+                <div className="text-[14px] text-[#555] mb-3 line-clamp-2">
+                  Start programming the web! This guide introduces JavaScript basics, variables, functions, and DOM manipulation.
+                </div>
+                <div className="flex gap-2">
+                  <span className="bg-[#c6f6d5] text-[#2f855a] rounded px-3 py-1 text-[13px]">JavaScript</span>
+                  <span className="bg-[#fed7e2] text-[#d53f8c] rounded px-3 py-1 text-[13px]">Programming</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* All blog posts */}
+        <section className="max-w-7xl mx-auto px-8 mt-16">
+          <h2 className="font-semibold text-[22px] mb-8 text-[#222]">All blog posts</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
+            {/* Post 1 */}
+            <div className="flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
+                alt="Semantic HTML"
+                className="rounded-lg w-full h-[180px] object-cover mb-3"
+              />
+              <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
+                Riley Markup <span className="text-[#6b6b6b] font-normal">• 20 Jun 2025</span>
+              </div>
+              <div className="font-bold text-[22px] mb-1 text-[#222] flex items-center">
+                Semantic HTML: Why It Matters
+                <span className="ml-1 text-[18px]">↗</span>
+              </div>
+              <div className="text-[15px] text-[#555] mb-3">
+                Understand the importance of semantic tags in HTML for accessibility, SEO, and maintainable code.
+              </div>
+              <div className="flex gap-2">
+                <span className="bg-[#e9d8fd] text-[#805ad5] rounded px-3 py-1 text-[13px]">HTML</span>
+                <span className="bg-[#e2e8f0] text-[#4a5568] rounded px-3 py-1 text-[13px]">Accessibility</span>
+              </div>
+            </div>
+            {/* Post 2 */}
+            <div className="flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
+                alt="Responsive CSS"
+                className="rounded-lg w-full h-[180px] object-cover mb-3"
+              />
+              <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
+                Casey Flex <span className="text-[#6b6b6b] font-normal">• 19 Jun 2025</span>
+              </div>
+              <div className="font-bold text-[22px] mb-1 text-[#222] flex items-center">
+                Responsive CSS: Flex & Grid
+                <span className="ml-1 text-[18px]">↗</span>
+              </div>
+              <div className="text-[15px] text-[#555] mb-3">
+                Learn how to use Flexbox and Grid to create layouts that look great on any device.
+              </div>
+              <div className="flex gap-2">
+                <span className="bg-[#bee3f8] text-[#3182ce] rounded px-3 py-1 text-[13px]">CSS</span>
+                <span className="bg-[#e9d8fd] text-[#6f42c1] rounded px-3 py-1 text-[13px]">Responsive</span>
+                <span className="bg-[#fed7e2] text-[#d53f8c] rounded px-3 py-1 text-[13px]">Layout</span>
+              </div>
+            </div>
+            {/* Post 3 */}
+            <div className="flex flex-col">
+              <img
+                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                alt="JavaScript DOM"
+                className="rounded-lg w-full h-[180px] object-cover mb-3"
+              />
+              <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
+                Jordan DOM <span className="text-[#6b6b6b] font-normal">• 18 Jun 2025</span>
+              </div>
+              <div className="font-bold text-[22px] mb-1 text-[#222] flex items-center">
+                JavaScript and the DOM
+                <span className="ml-1 text-[18px]">↗</span>
+              </div>
+              <div className="text-[15px] text-[#555] mb-3">
+                Dive into how JavaScript interacts with the Document Object Model to create dynamic web pages.
+              </div>
+              <div className="flex gap-2">
+                <span className="bg-[#e9d8fd] text-[#6f42c1] rounded px-3 py-1 text-[13px]">JavaScript</span>
+                <span className="bg-[#bee3f8] text-[#3182ce] rounded px-3 py-1 text-[13px]">DOM</span>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
