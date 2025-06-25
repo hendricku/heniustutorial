@@ -67,7 +67,7 @@ export default function CssSection() {
                 )}
                 {topic.whatsNext && (
                   <div className="mb-4 p-3 rounded bg-purple-50 border-l-4 border-purple-400 text-purple-900">
-                    <strong>⏭️ What's next?</strong> {topic.whatsNext}
+                    <strong>⏭️ What&apos;s next?</strong> {topic.whatsNext}
                   </div>
                 )}
               </article>
