@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -25,10 +26,12 @@ export default function Home() {
             {/* Featured Post */}
             <div className="md:col-span-2 flex flex-col bg-white rounded-lg">
               <div className="relative">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"
                   alt="HTML Basics"
                   className="rounded-lg w-full h-[240px] object-cover"
+                  width={800}
+                  height={240}
                 />
                 <a
                   href="/htmlsection"
@@ -65,10 +68,12 @@ export default function Home() {
             <div className="flex flex-col gap-8">
               {/* Post 1 */}
               <div className="flex flex-col">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
                   alt="CSS Fundamentals"
                   className="rounded-lg w-full h-[110px] object-cover mb-3"
+                  width={400}
+                  height={110}
                 />
                 <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
                   Jamie Styles <span className="text-[#6b6b6b] font-normal">• 22 Jun 2025</span>
@@ -88,10 +93,12 @@ export default function Home() {
               </div>
               {/* Post 2 */}
               <div className="flex flex-col">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
                   alt="JavaScript Essentials"
                   className="rounded-lg w-full h-[110px] object-cover mb-3"
+                  width={400}
+                  height={110}
                 />
                 <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
                   Morgan Script <span className="text-[#6b6b6b] font-normal">• 21 Jun 2025</span>
@@ -115,10 +122,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
             {/* Post 1 */}
             <div className="flex flex-col">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
                 alt="Semantic HTML"
                 className="rounded-lg w-full h-[180px] object-cover mb-3"
+                width={600}
+                height={180}
               />
               <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
                 Riley Markup <span className="text-[#6b6b6b] font-normal">• 20 Jun 2025</span>
@@ -137,10 +146,12 @@ export default function Home() {
             </div>
             {/* Post 2 */}
             <div className="flex flex-col">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80"
                 alt="Responsive CSS"
                 className="rounded-lg w-full h-[180px] object-cover mb-3"
+                width={600}
+                height={180}
               />
               <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
                 Casey Flex <span className="text-[#6b6b6b] font-normal">• 19 Jun 2025</span>
@@ -160,10 +171,12 @@ export default function Home() {
             </div>
             {/* Post 3 */}
             <div className="flex flex-col">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
                 alt="JavaScript DOM"
                 className="rounded-lg w-full h-[180px] object-cover mb-3"
+                width={600}
+                height={180}
               />
               <div className="text-[15px] text-[#6f42c1] font-semibold mb-1">
                 Jordan DOM <span className="text-[#6b6b6b] font-normal">• 18 Jun 2025</span>
