@@ -1,4 +1,17 @@
-export const cssTopicsData = [
+
+type CssTopic = {
+  id: string;
+  title: string;
+  emoji: string;
+  description: string;
+  code: string | null;
+  output?: string | null;
+  proTip?: string;
+  didYouKnow?: string;
+  whatsNext?: string;
+};
+
+export const cssTopicsData: { group: string; topics: CssTopic[] }[] = [
   {
     group: "CSS Tutorial",
     topics: [

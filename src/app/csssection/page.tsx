@@ -4,23 +4,12 @@ import Sidebar from "../htmlsection/Sidebar";
 import { cssTopicsData } from "./topicsData";
 import { useState } from "react";
 
-// 1. UPDATE THE TYPE DEFINITION HERE (This part was already correct)
-// type CssTopic = {
-//   id: string;
-//   title: string;
-//   emoji: string;
-//   description: string;
-//   code: string | null;
-//   output?: string | null;
-//   proTip?: string;
-//   didYouKnow?: string;
-//   whatsNext?: string;
-// };
 
 export default function CssSection() {
-  
-  const allTopics = cssTopicsData.flatMap(group => group.topics) as CssTopic[];
-  
+  // CORRECTED LINE: Use a type assertion to fix the type mismatch.
+  const allTopics = cssTopicsData.flatMap((group) => group.topics) ;
+
+
   const [selectedTopicId, setSelectedTopicId] = useState(allTopics[0].id);
 
   return (
@@ -34,7 +23,7 @@ export default function CssSection() {
         />
         <main className="flex-1 p-6 md:p-10 bg-[#fafbfc] min-h-screen">
           {(() => {
-            const topic = allTopics.find(t => t.id === selectedTopicId);
+            const topic = allTopics.find((t) => t.id === selectedTopicId);
             if (!topic) return null;
             return (
               <article className="max-w-2xl mx-auto">
@@ -42,17 +31,20 @@ export default function CssSection() {
                   <span>{topic.emoji}</span>
                   <span>{topic.title}</span>
                 </h1>
-                <p className="mb-6 text-lg leading-relaxed text-[#222] whitespace-pre-wrap">{topic.description}</p>
+                <p className="mb-6 text-lg leading-relaxed text-[#222] whitespace-pre-wrap">
+                  {topic.description}
+                </p>
                 {topic.code && (
                   <pre className="bg-[#222] text-[#f8f8f2] rounded-lg p-4 mb-6 overflow-x-auto text-base">
                     <code>{topic.code}</code>
                   </pre>
                 )}
 
-              
                 {topic.output && (
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold mb-2 text-[#333]">Sample Output</h2>
+                    <h2 className="text-xl font-semibold mb-2 text-[#333]">
+                      Sample Output
+                    </h2>
                     <div className="bg-gray-100 border border-gray-300 rounded-lg p-4">
                       {/* Using <pre> preserves the whitespace and formatting of your block diagrams */}
                       <pre className="text-sm text-gray-700 whitespace-pre-wrap font-mono">
@@ -75,7 +67,7 @@ export default function CssSection() {
                 )}
                 {topic.whatsNext && (
                   <div className="mb-4 p-3 rounded bg-purple-50 border-l-4 border-purple-400 text-purple-900">
-                    <strong>⏭️ What&apos;s next?</strong> {topic.whatsNext}
+                    <strong>⏭️ What's next?</strong> {topic.whatsNext}
                   </div>
                 )}
               </article>
