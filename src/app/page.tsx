@@ -73,7 +73,11 @@ export default function Home() {
                 <div className="text-[14px] text-[#6f42c1] font-semibold mb-1">
                   Jamie Styles <span className="text-[#6b6b6b] font-normal">• 22 Jun 2025</span>
                 </div>
-                <div className="font-bold text-[17px] mb-1 text-[#222]">CSS Fundamentals</div>
+                <div className="font-bold text-[17px] mb-1 text-[#222]">
+                  <a href="/csssection" className="hover:underline focus:underline">
+                    CSS Fundamentals
+                  </a>
+                </div>
                 <div className="text-[14px] text-[#555] mb-3 line-clamp-2">
                   Discover how to style your web pages with CSS. Learn about selectors, colors, layouts, and responsive design.
                 </div>
