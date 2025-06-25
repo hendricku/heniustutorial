@@ -5,20 +5,20 @@ import { cssTopicsData } from "./topicsData";
 import { useState } from "react";
 
 // 1. UPDATE THE TYPE DEFINITION HERE (This part was already correct)
-type CssTopic = {
-  id: string;
-  title: string;
-  emoji: string;
-  description: string;
-  code: string | null;
-  output?: string | null;
-  proTip?: string;
-  didYouKnow?: string;
-  whatsNext?: string;
-};
+// type CssTopic = {
+//   id: string;
+//   title: string;
+//   emoji: string;
+//   description: string;
+//   code: string | null;
+//   output?: string | null;
+//   proTip?: string;
+//   didYouKnow?: string;
+//   whatsNext?: string;
+// };
 
 export default function CssSection() {
-  // THIS IS THE CORRECTED LINE
+  
   const allTopics = cssTopicsData.flatMap(group => group.topics) as CssTopic[];
   
   const [selectedTopicId, setSelectedTopicId] = useState(allTopics[0].id);
