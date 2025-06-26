@@ -8,7 +8,7 @@ const navLinks = [
   { href: "/", label: "HOME" },
   { href: "/htmlsection", label: "HTML" },
   { href: "/csssection", label: "CSS" },
-  { href: "#", label: "JAVASCRIPT" },
+  { href: "/jssection", label: "JAVASCRIPT" },
 ];
 
 export default function Navbar() {
