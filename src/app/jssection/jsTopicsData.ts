@@ -38,7 +38,11 @@ export const jsTopicsData = [
     emoji: "🔢",
     description: "Variables store data values. Use `let` for variables that can be reassigned and `const` for constants that cannot.",
     inputs: null,
-    code: `const name = "Alex"; // Cannot be changed\nlet age = 30; // Can be changed\n\n// Using a template literal for easier string formatting\nconsole.log(\`${name} is \${age} years old.\`);`,
+    code: `const name = "Alex"; // Cannot be changed
+let age = 30; // Can be changed
+
+// Using a template literal for easier string formatting
+console.log(\`\${name} is \${age} years old.\`);`,
     output: `Alex is 30 years old.`,
     proTip: "Prefer `const` by default. Only use `let` when you know you'll need to reassign the variable. Avoid `var` in modern codebases.",
     didYouKnow: "`var` is function-scoped, while `let` and `const` are block-scoped, which is more intuitive and helps prevent bugs.",
